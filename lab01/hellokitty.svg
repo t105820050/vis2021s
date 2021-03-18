@@ -46,9 +46,9 @@
 
   <ellipse fill="#FFE153" stroke="#246614" stroke-width="5" cx="256" cy="270" rx="200" ry="150" opacity="0.2"/>
 
-  <path d="M456 256 A200 140, 0, 0, 0, 56,256 " stroke-width="10" stroke="#F00" fill="none" opacity="0.3"/>
+  <path d="M456 256 A200 140 0, 0, 0, 440,220 Q490 150,430,150 Q440 50,350,120 Q310 60,270,123 A200 140,0,0,0,178,130 Q60 50,90,192  A200 140, 0, 0, 0, 56,256 A56 45,0,0,0,456 256" stroke-width="10" stroke="#F00" fill="none" opacity="0.3"/>
   
-<path d="M56 256 A200 165, 0, 0, 0, 456,256 " stroke-width="10" stroke="#F00" fill="none" opacity="0.3"/>
+
   <circle id="c1" cx="456" cy="256" r="1" stroke="red" fill="none">
     <animate attributeName="r" to="10" dur="2s" repeatCount="indefinite"/>
   </circle>
