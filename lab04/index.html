@@ -61,7 +61,7 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
         </div>
         <img src="./c.png" width="650">
         <div id="div1"></div>
-        <script src="./d3.v3.min.js"></script> 
+        <script src="./d3.v3.min.js"></script>
 
         <script type="text/javascript"charset="utf-8">
 
@@ -87,10 +87,28 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
                         .data(parsedCSV).enter()
                         .append("tr")
 
-                    .select("td")
+                    .selectAll("td")
                         .data(function(d) { return d; }).enter()
                         .append("td")
-                        .text(function(d) { return d; });
+                        .text(
+                                function(d,i){
+                                  if(i!=4 && i!=5 )
+                                    return d;
+                                  else if(d!="0"&&d!="1")
+                                    return d;
+                                 }
+                              )
+                              .append("img")
+                              .attr("src", function(d, i) {
+                                if (i>3){
+                                  if(d=='0')
+                                    return "./92.png";
+                                  else if (d=="1")return "./93.png";
+                                 }
+                               })
+                               .attr("width",  function(d, i) { if (i==4||i==5){if(d=='1'||d=='0')return 50;else  return 0;}})
+                               .attr("height", function(d, i){  if (i==4||i==5){if(d=='1'||d=='0')return 50;else  return 0;}})
+
             });
         </script>
     </body>
