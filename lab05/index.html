@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>D3 Page Template</title>
+    <title>Lab</title>
     <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
+
+    <style type="text/css">
+    	div.bar{
+    		border: 1px black solid;
+    		padding:  10px;
+    		margin: 10px;
+    		display:  inline-block;
+    		width: 20px;
+    		height: 75px;
+    		background-color: DarkSalmon;
+    	}
+    	body{
+    		border: 1px blue solid;
+    		padding:  10px;
+    		margin: 10px;
+    	}
+    </style>
 </head>
 <body>
+
+	
+
     <script type="text/javascript">
       // Your beautiful D3 code will go here
+
+      d3.csv("data.csv",function(data){
+
+      	d3.select("body")
+      	.selectAll("div")
+      	  .data(data)
+      	  .enter()
+      	  .append("div")      	 
+      	  .attr("class","bar")
+      	  .style("height",function(d){
+      	  	return d['頻率']+'px';
+      	  });
+
+      });
+/*
+      d3.csv("data.csv",function(data){
+      	 d3.select("body")
+      	  .selectAll("div")
+      	  .data(data)
+      	  .enter()
+      	  .append("div")
+      	  .attr("class","bar")
+      	  .style("height",)
+      	  */
+
     </script>
-  </body>
-</html>
+  </html>
   
